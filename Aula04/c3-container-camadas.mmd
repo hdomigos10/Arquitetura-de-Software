@@ -1,0 +1,28 @@
+flowchart TD
+    Vendedor(["Vendedor"])
+    Admin(["Administrador"])
+    Estoque(["Time de Estoque"])
+    
+subgraph TD["Sistema de Vendas e Estoque"]
+    subgraph Apresentacao["Camada de Apresentação"]
+        AppVendas["App do Vendedor"]
+        Backoffice["App do Administrador"]
+        AppEstoque["App do Estoque"]
+    end
+
+    subgraph Dominio["Camada de Domínio"]
+        Server["API"]
+    end
+
+    subgraph Dados["Camada de Dados"]
+        DB[("Banco de Dados")]
+    end
+ end   
+
+ Vendedor -->|registra pedidos| AppVendas
+ Admin -->|cadastra e remove produtos| Backoffice
+ Estoque -->|dá baixa e registra entradas| AppEstoque
+ AppVendas -->|Chama API| Server
+ Backoffice -->|Chama API| Server
+ AppEstoque -->|Chama API| Server
+ Server -->|Lê e grava| DB

@@ -1,0 +1,8 @@
+The following files have been resolved:
+   org.springframework.boot:spring-boot-starter-actuator:jar:4.1.1:compile -- module spring.boot.starter.actuator [auto]
+   org.springframework.boot:spring-boot-h2console:jar:4.1.1:compile -- module spring.boot.h2console [auto]
+   org.springframework.boot:spring-boot-starter-data-jpa:jar:4.1.1:compile -- module spring.boot.starter.data.jpa [auto]
+   org.springframework.boot:spring-boot-starter-thymeleaf:jar:4.1.1:compile -- module spring.boot.starter.thymeleaf [auto]
+   org.springframework.boot:spring-boot-starter-webmvc:jar:4.1.1:compile -- module spring.boot.starter.webmvc [auto]
+   org.projectlombok:lombok:jar:1.18.46:compile (optional) -- module lombok
+
