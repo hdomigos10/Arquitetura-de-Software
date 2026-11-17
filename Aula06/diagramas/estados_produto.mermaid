@@ -1,0 +1,7 @@
+stateDiagram-v2
+    [*] --> INDISPONÍVEL: Criação do Produto
+    INDISPONÍVEL --> DISPONÍVEL: Entrada > 0
+    DISPONÍVEL --> INDISPONÍVEL: Estoque Zera (Saída)
+    INDISPONÍVEL --> DESCONTINUADO: Ação Exclusiva do Admin
+    DISPONÍVEL --> DESCONTINUADO: Ação Exclusiva do Admin
+    DESCONTINUADO --> [*]

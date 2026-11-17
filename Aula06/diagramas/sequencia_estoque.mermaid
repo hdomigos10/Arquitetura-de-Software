@@ -1,0 +1,19 @@
+sequenceDiagram
+    autonumber
+    actor Usuario
+    participant Controller as EstoqueController
+    participant Service as ProdutoService
+    participant Domain as Produto
+
+    Usuario->>Controller: Solicita saída de estoque
+    Controller->>Service: processarSaida(produtoId, qtd)
+    Service->>Domain: registrarSaida(qtd)
+    alt Produto Descontinuado ou Sem Estoque
+        Domain-->>Service: Lança Exceção
+        Service-->>Controller: Retorna Erro
+        Controller-->>Usuario: Exibe Mensagem de Falha
+    else Estoque Válido
+        Domain-->>Service: Atualiza Qtd e Status
+        Service-->>Controller: Sucesso
+        Controller-->>Usuario: Redireciona com Sucesso
+    end

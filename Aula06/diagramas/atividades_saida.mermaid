@@ -1,0 +1,13 @@
+stateDiagram-v2
+    [*] --> Inicio
+    Inicio --> VerificarStatus: Solicita Saída
+    VerificarStatus --> ErroDescontinuado: Status == DESCONTINUADO
+    VerificarStatus --> VerificarQtd: Status != DESCONTINUADO
+    VerificarQtd --> ErroSemEstoque: Qtd Estoque <= 0 ou Qtd > Estoque
+    VerificarQtd --> RealizarBaixa: Qtd Válida
+    RealizarBaixa --> AtualizarStatus: Se Estoque == 0
+    AtualizarStatus --> Fim: Altera para INDISPONÍVEL
+    RealizarBaixa --> Fim: Mantém Status
+    ErroDescontinuado --> [*]
+    ErroSemEstoque --> [*]
+    Fim --> [*]

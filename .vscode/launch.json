@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "HexagonalApplication",
+            "request": "launch",
+            "mainClass": "br.com.hexagonal.HexagonalApplication",
+            "projectName": "hexagonal"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-MvcApplication<mvc>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
